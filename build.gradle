@@ -9,16 +9,19 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
-    maven { url "https://mirror.huaweicloud.com/repository/maven/" }
+	  mavenLocal()
+    maven { url 'https://maven.aliyun.com/repository/public' }
     jcenter()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-	implementation 'com.google.code.gson:gson:2.8.6'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'com.esotericsoftware:kryo:5.0.3'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 test {
